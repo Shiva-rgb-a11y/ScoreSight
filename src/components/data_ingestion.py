@@ -8,8 +8,10 @@ from dataclasses import dataclass
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from exception import CustomException
+
 from logger import logging
 from components.data_transformation import DataTransformation
+from components.model_train import ModelTrainer
 
 @dataclass
 class DataIngestionConfig:
@@ -52,5 +54,8 @@ if __name__ == "__main__":
     ingestion = DataIngestion()
     train_data, test_data = ingestion.initiate_data_ingestion()
 
-    transformation = DataTransformation()
-    transformation.initiate_data_transformation(train_data, test_data)
+    data_transformation = DataTransformation()
+    train_arr, test_arr, preprocessor_path = data_transformation.initiate_data_transformation(train_data, test_data)
+
+    modeltrainer = ModelTrainer()
+    print(modeltrainer.initiate_model_trainer(train_arr, test_arr, preprocessor_path))
