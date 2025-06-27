@@ -8,7 +8,7 @@ from dataclasses import dataclass
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from exception import CustomException
-
+from sklearn.model_selection import GridSearchCV
 from logger import logging
 from components.data_transformation import DataTransformation
 from components.model_train import ModelTrainer
