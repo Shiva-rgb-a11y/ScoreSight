@@ -4,12 +4,6 @@
 
 ---
 
-## 🚀 Live Demo
-
-> 🔗 [Add your deployment URL here after going live, e.g. Render/AWS/Railway]
-
----
-
 ## 💡 Features
 
 - 🔍 Predicts math score using:
